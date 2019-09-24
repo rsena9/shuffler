@@ -3,10 +3,19 @@ package edu.cnm.deepdive;
 import java.util.Random;
 import org.omg.CORBA.Object;
 
+
+
 public class Shuffler {
+
+
+
 
   private final Random rng;
 
+  /**
+   * Initializes this instance with the provided source of (pseudo-)randomness.
+   * @param rng
+   */
   public Shuffler(Random rng) {
     this.rng = rng;
   }
@@ -20,6 +29,10 @@ public class Shuffler {
     }
   }
 
+  /**
+   *
+   * @param data
+   */
   public void shuffle(double[] data){
     for(int dest = data.length-1; dest>0; dest-- ) {
       int source = rng.nextInt(dest + 1);
@@ -29,6 +42,12 @@ public class Shuffler {
     }
 
   }
+
+  /**
+   *
+   * @param data
+   * @param <T>
+   */
   public <T> void shuffle(T[] data){
     for(int dest = data.length-1; dest>0; dest-- ) {
       int source = rng.nextInt(dest + 1);
@@ -38,7 +57,10 @@ public class Shuffler {
     }
   }
 
-
+  /**
+   *
+   * @param data
+   */
   public void shuffle(char[] data){
     for(int dest = data.length-1; dest>0; dest-- ) {
       int source = rng.nextInt(dest + 1);
@@ -48,6 +70,12 @@ public class Shuffler {
 
     }
   }
+
+  /**
+   *Shuffles {@code data} in place.
+   *
+   * @param data
+   */
    public void shuffle(byte[] data){
     for(int dest = data.length-1; dest>0; dest-- ) {
       int source = rng.nextInt(dest + 1);
@@ -58,6 +86,10 @@ public class Shuffler {
     }
   }
 
+  /**
+   *
+   * @param data
+   */
   public void shuffle(long[] data){
     for(int dest = data.length-1; dest>0; dest-- ) {
       int source = rng.nextInt(dest + 1);
@@ -67,6 +99,11 @@ public class Shuffler {
 
     }
   }
+
+  /**
+   *
+   * @param data
+   */
   public void shuffle(short[] data){
     for(int dest = data.length-1; dest>0; dest-- ) {
       int source = rng.nextInt(dest + 1);
@@ -76,6 +113,11 @@ public class Shuffler {
 
     }
   }
+
+  /**
+   *
+   * @param data
+   */
   public void shuffle(float[] data){
     for(int dest = data.length-1; dest>0; dest-- ) {
       int source = rng.nextInt(dest + 1);
