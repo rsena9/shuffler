@@ -4,21 +4,25 @@ import java.util.Random;
 import org.omg.CORBA.Object;
 
 
-
 public class Shuffler {
-
-
 
 
   private final Random rng;
 
   /**
-   * Initializes this instance with the provided source of (pseudo-)randomness.
-   * @param rng
+   *  Initializes this instance with the provided source of randomness (or pseudo-randomness).
+   *
+   * @param rng random number generator.
    */
   public Shuffler(Random rng) {
     this.rng = rng;
   }
+
+  /**
+   * Shuffles {@code data} in place.
+   *
+   * @param data array to be shuffled.
+   */
   public void shuffle(int[] data){
     for(int dest = data.length-1; dest>0; dest-- ) {
       int source = rng.nextInt(dest + 1);
@@ -30,8 +34,9 @@ public class Shuffler {
   }
 
   /**
+   * Shuffles {@code data} in place.
    *
-   * @param data
+   * @param data array to be shuffled.
    */
   public void shuffle(double[] data){
     for(int dest = data.length-1; dest>0; dest-- ) {
@@ -44,9 +49,10 @@ public class Shuffler {
   }
 
   /**
+   * Shuffles {@code data} in place.
    *
-   * @param data
-   * @param <T>
+   * @param data array to be shuffled.
+   * @param <T> array element type.
    */
   public <T> void shuffle(T[] data){
     for(int dest = data.length-1; dest>0; dest-- ) {
@@ -57,9 +63,11 @@ public class Shuffler {
     }
   }
 
+
   /**
+   * Shuffles {@code data} in place.
    *
-   * @param data
+   * @param data array to be shuffled.
    */
   public void shuffle(char[] data){
     for(int dest = data.length-1; dest>0; dest-- ) {
@@ -71,10 +79,11 @@ public class Shuffler {
     }
   }
 
+
   /**
-   *Shuffles {@code data} in place.
+   * Shuffles {@code data} in place.
    *
-   * @param data
+   * @param data array to be shuffled.
    */
    public void shuffle(byte[] data){
     for(int dest = data.length-1; dest>0; dest-- ) {
@@ -87,8 +96,9 @@ public class Shuffler {
   }
 
   /**
-   * more info needed
-   * @param data
+   * Shuffles {@code data} in place.
+   *
+   * @param data array to be shuffled.
    */
   public void shuffle(long[] data){
     for(int dest = data.length-1; dest>0; dest-- ) {
@@ -101,8 +111,9 @@ public class Shuffler {
   }
 
   /**
+   * Shuffles {@code data} in place.
    *
-   * @param data
+   * @param data array to be shuffled.
    */
   public void shuffle(short[] data){
     for(int dest = data.length-1; dest>0; dest-- ) {
@@ -115,8 +126,9 @@ public class Shuffler {
   }
 
   /**
+   * Shuffles {@code data} in place.
    *
-   * @param data
+   * @param data array to be shuffled.
    */
   public void shuffle(float[] data){
     for(int dest = data.length-1; dest>0; dest-- ) {
@@ -128,4 +140,17 @@ public class Shuffler {
     }
   }
 
+  /**
+   * Shuffles {@code data} in place.
+   *
+   * @param data array to be shuffled.
+   */
+  public void shuffle(boolean[] data) {
+    for (int dest = data.length - 1; dest > 0; dest--) {
+      int source = rng.nextInt(dest + 1);
+      boolean temp = data[dest];
+      data[dest] = data[source];
+      data[source] = temp;
+    }
+  }
 }
